@@ -7,29 +7,14 @@ function App() {
     email: ""
   });
 
-  function handleChange(event) {
+  function handleContactChange(event) {
     const { name, value } = event.target;
 
-    setContact(prevValue => {
-      if (name === "fName") {
-        return {
-          fName: value,
-          lName: prevValue.lName,
-          email: prevValue.email
-        };
-      } else if (name === "lName") {
-        return {
-          fName: prevValue.fName,
-          lName: value,
-          email: prevValue.email
-        };
-      } else if (name === "email") {
-        return {
-          fName: prevValue.fName,
-          lName: prevValue.lName,
-          email: value
-        };
-      }
+    setContact((prevValue) => {
+      return {
+        ...prevValue,
+        [name]: value
+      };
     });
   }
 
@@ -41,19 +26,19 @@ function App() {
       <p>{contact.email}</p>
       <form>
         <input
-          onChange={handleChange}
+          onChange={handleContactChange}
           name="fName"
           value={contact.fName}
           placeholder="First Name"
         />
         <input
-          onChange={handleChange}
+          onChange={handleContactChange}
           name="lName"
           value={contact.lName}
           placeholder="Last Name"
         />
         <input
-          onChange={handleChange}
+          onChange={handleContactChange}
           name="email"
           value={contact.email}
           placeholder="Email"
