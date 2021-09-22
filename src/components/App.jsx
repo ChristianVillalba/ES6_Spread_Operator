@@ -16,6 +16,8 @@ function App() {
         [name]: value
       };
     });
+    // ⚠ This syntax may be confusing. Reduced even more:
+    // setContact((prevValue) => ({ ...prevValue, [name]: value }));
   }
 
   return (
