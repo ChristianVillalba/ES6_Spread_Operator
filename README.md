@@ -58,7 +58,7 @@ Using ```fullName``` (without Spread Operator ```...```) will nested the fullNam
 
 ### Reducing our code: 
 
-
+Thanks to the Spread Operator, our function:
 ```javascript
     setContact((prevValue) => {
       if (name === "fName") {
@@ -83,7 +83,7 @@ Using ```fullName``` (without Spread Operator ```...```) will nested the fullNam
     });
 ```
 
-can be reduced to:
+... can be reduced to:
 
 ```javascript
     setContact((prevValue) => {
@@ -93,5 +93,27 @@ can be reduced to:
       };
     });
 ```
+```[name]``` should be included between squared braces ```[]```     
+We need to add the value that we want inside and an Array syntax.         
+otherwise, it will be interpreted as if we want to create a new **key: value** pair where the **key** is the word **name**.     
+How this works: [JavaScript set object key by variable (Stackoverflow) ](https://stackoverflow.com/questions/11508463/javascript-set-object-key-by-variable?noredirect=1&lq=1)  
+
+...we could shorten this code even further because we only have one thing being returned:
+⚠ This syntax may be confusing.
+```javascript
+    setContact((prevValue) => ({ ...prevValue, [name]: value }));
+```
+We can delete ```return``` and its curly braces ```{}``` and semicolon ```;```     
+And end up only with one object.      
+We have to wrap it inside a set of parentheses ```()``` to remark that it's an Obj.   
+
+
+
+
 ---
 ## What I have learned with this project:
+* Spread Operator
+* Using the Spread Operator in
+    * JS Arrays
+    * JS Objects
+* Reducing our code with the Spread Operator
