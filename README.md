@@ -1,6 +1,4 @@
 # ES6_spread_operator
-Created with CodeSandbox
-
 Created with [CodeSandbox](https://codesandbox.io/)  
 Notes from: React module  
 [The Complete 2021 Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/)  
@@ -98,7 +96,7 @@ We need to add the value that we want inside and an Array syntax.
 otherwise, it will be interpreted as if we want to create a new **key: value** pair where the **key** is the word **name**.     
 How this works: [JavaScript set object key by variable (Stackoverflow) ](https://stackoverflow.com/questions/11508463/javascript-set-object-key-by-variable?noredirect=1&lq=1)  
 
-...we could shorten this code even further because we only have one thing being returned:
+...we could shorten this code even further because we only have one thing being returned:     
 ⚠ This syntax may be confusing.
 ```javascript
     setContact((prevValue) => ({ ...prevValue, [name]: value }));
